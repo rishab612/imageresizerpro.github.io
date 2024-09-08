@@ -31,6 +31,15 @@ let aspectRatio;
 let imageQuality = 1.0; // Default quality factor
 let imageUploaded = false; // Track if image is uploaded
 
+// Background image for the canvas
+const bgImage = new Image();
+bgImage.src = '/images/image-bg.webp';
+
+document.querySelector('.logo').addEventListener('mousedown', function(event) {
+    event.stopPropagation(); // Prevent default action
+});
+
+
 // Function to convert input units to pixels
 function convertToPx(value, unit) {
     const dpi = parseFloat(dpiInput.value) || 96; // Get user-set DPI or default to 96 if empty
@@ -46,6 +55,12 @@ function convertToPx(value, unit) {
         default:
             return value; // If it's in pixels, return as is
     }
+}
+
+// Function to draw background image
+function drawBackground() {
+    ctx.clearRect(0, 0, imageCanvas.width, imageCanvas.height);
+    ctx.drawImage(bgImage, 0, 0, imageCanvas.width, imageCanvas.height);
 }
 
 // Show DPI input when inches is selected
@@ -65,6 +80,7 @@ imageUpload.addEventListener('change', function(event) {
         reader.readAsDataURL(file);
     } else {
         imageUploaded = false;
+        drawBackground(); // Draw background when no image is uploaded
     }
 });
 
@@ -246,3 +262,6 @@ downloadBtn.addEventListener('click', () => {
         }
     }, 1000); // Update every second
 });
+
+// Draw the background image initially
+drawBackground();
