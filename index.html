@@ -19,13 +19,13 @@
     <!-- Header Section -->
     <header>
         <nav>
-            <div class="logo">
+            <div class="logo" style="user-select: none; cursor: pointer; outline-color: blue;">
                 <h1><i class="fas fa-image"></i> Image Resizer Pro</h1>
             </div>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#faq">FAQs</a></li>
+                <li><a href="#home"><i class="fa fa-home"></i> Home</a></li>
+                <li><a href="#about"><i class="fa fa-book"></i> AboutUs</a></li>
+                <li><a href="#faq"><i class="fa fa-question-circle"></i> FAQs</a></li>
             </ul>
         </nav>
     </header>
@@ -42,7 +42,9 @@
                 <label for="imageUpload" class="upload-btn"><i class="fas fa-upload"></i> Choose Image</label>
             </div>
 
-            <canvas id="imageCanvas"></canvas>
+            <canvas id="imageCanvas" >
+                <img src="images/image-bg.webp" alt="image-bg" class="imageBg">
+            </canvas>
 
             <!-- Image Dimension Display -->
 <div class="dimension-info" style="display:none;">
@@ -70,7 +72,7 @@
             <div class="controls">
                 <div class="control">
                     <label for="widthInput"><i class="fas fa-arrows-alt-h"></i> Width:</label>
-                    <input type="number" id="widthInput" placeholder="Width">
+                    <input type="number" id="widthInput" placeholder="Width" required>
                 </div>
                 <div class="control">
                     <label for="heightInput"><i class="fas fa-arrows-alt-v"></i> Height:</label>
@@ -125,7 +127,7 @@
                 
                 <!-- Quality Options -->
                 <div class="quality-options">
-                 <label for="qualitySelect">Select Quality:</label>
+                 <label for="qualitySelect"><i class="fa fa-check-circle"></i> Select Quality:</label>
                 <select id="qualitySelect">
                    <option value="default">Default Quality</option>
                     <option value="enhance">Reduce Quality</option>
@@ -146,13 +148,13 @@
 
     <!-- About Us Section -->
     <section id="about" class="info-section">
-        <h2>About Us</h2>
+        <h2><i class="fa fa-book"></i> About Us</h2>
         <p>Image Resizer Pro is a fast and reliable tool for resizing and exporting images in various formats. Our mission is to provide an easy-to-use platform for quick image editing needs.</p>
     </section>
 
     <!-- FAQ Section -->
     <section id="faq" class="info-section">
-        <h2>Frequently Asked Questions</h2>
+        <h2><i class="fa fa-question-circle"></i> Frequently Asked Questions</h2>
         <ul>
             <li><strong>How do I resize my image?</strong> Simply upload your image, enter the desired dimensions, and click 'Resize'.</li>
             <li><strong>Can I maintain the aspect ratio?</strong> Yes, check the 'Lock Aspect Ratio' option to maintain proportions.</li>
