@@ -388,3 +388,12 @@ footer p {
     font-size: 16px;
     color: #4caf50;
 }
+
+.imageBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10%;
+    height: 10%;
+ 
+}
