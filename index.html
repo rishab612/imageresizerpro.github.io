@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,8 +15,9 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
-<body>
 
+<body>
+    <div class="tile tile--emoji-cursor">
     <!-- Header Section -->
     <header>
         <nav>
@@ -23,51 +25,52 @@
                 <h1><i class="fas fa-image"></i> Image Resizer Pro</h1>
             </div>
             <ul>
-                <li><a href="#home"><i class="fa fa-home"></i> Home</a></li>
-                <li><a href="#about"><i class="fa fa-book"></i> AboutUs</a></li>
-                <li><a href="#faq"><i class="fa fa-question-circle"></i> FAQs</a></li>
+                <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+                <li><a href="about.html"><i class="fa fa-book"></i> AboutUs</a></li>
+                <li><a href="faq.html"><i class="fa fa-question-circle"></i> FAQs</a></li>
             </ul>
         </nav>
     </header>
-    
+
     <!-- Main Content Section -->
     <section id="home" class="content">
         <div class="container">
             <h2>Resize Your Images Instantly</h2>
-            <p>Upload, resize, and download your images in various formats like PNG, JPG, and WebP with just a few clicks.</p>
-            
+            <p>Upload, resize, and download your images in various formats like PNG, JPG, and WebP with just a few
+                clicks.</p>
+
             <!-- Upload Section -->
             <div class="image-upload">
                 <input type="file" id="imageUpload" accept="image/*" />
                 <label for="imageUpload" class="upload-btn"><i class="fas fa-upload"></i> Choose Image</label>
             </div>
 
-            <canvas id="imageCanvas" >
-                <img src="/images/image-bg.webp" alt="image-bg" class="imageBg">
+            <canvas id="imageCanvas">
+                <img src="images/image-bg.webp" alt="image-bg" class="imageBg">
             </canvas>
 
             <!-- Image Dimension Display -->
-<div class="dimension-info" style="display:none;">
-    <p>Width: <span id="displayWidth">0</span> <span id="displayWidthUnit">px</span></p>
-    <p>Height: <span id="displayHeight">0</span> <span id="displayHeightUnit">px</span></p>
-</div>
+            <div class="dimension-info" style="display:none;">
+                <p>Width: <span id="displayWidth">0</span> <span id="displayWidthUnit">px</span></p>
+                <p>Height: <span id="displayHeight">0</span> <span id="displayHeightUnit">px</span></p>
+            </div>
 
-<!-- Percentage Options -->
-<div class="percentage-options" style="display:none;">
-    <p>Make my image <span id="percentValue">100</span>% of original size (Width x Height px)</p>
-    <div class="radio-scale">
-        <input type="radio" id="scale50" name="scale" value="50">
-        <label for="scale50">50%</label>
-        <input type="radio" id="scale75" name="scale" value="75">
-        <label for="scale75">75%</label>
-        <input type="radio" id="scale100" name="scale" value="100" checked>
-        <label for="scale100">100%</label>
-        <input type="radio" id="scale150" name="scale" value="150">
-        <label for="scale150">150%</label>
-        <input type="radio" id="scale200" name="scale" value="200">
-        <label for="scale200">200%</label>
-    </div>
-</div>
+            <!-- Percentage Options -->
+            <div class="percentage-options" style="display:none;">
+                <p>Make my image <span id="percentValue">100</span>% of original size (Width x Height px)</p>
+                <div class="radio-scale">
+                    <input type="radio" id="scale50" name="scale" value="50">
+                    <label for="scale50">50%</label>
+                    <input type="radio" id="scale75" name="scale" value="75">
+                    <label for="scale75">75%</label>
+                    <input type="radio" id="scale100" name="scale" value="100" checked>
+                    <label for="scale100">100%</label>
+                    <input type="radio" id="scale150" name="scale" value="150">
+                    <label for="scale150">150%</label>
+                    <input type="radio" id="scale200" name="scale" value="200">
+                    <label for="scale200">200%</label>
+                </div>
+            </div>
             <!-- Resize Controls -->
             <div class="controls">
                 <div class="control">
@@ -98,23 +101,23 @@
                     <input type="number" id="dpiInput" value="96" placeholder="DPI">
                 </div>
             </div>
-            
+
 
             <button id="resizeBtn" class="btn"><i class="fas fa-compress-alt"></i> Resize Image</button>
 
             <!-- Progress Bar -->
-           <!-- HTML -->
-<div class="progress-wrapper" style="display:none;">
-    <div id="progressBar"></div>
-    <p id="progressText">Resizing... 0%</p>
-</div>
-<div class="message-wrapper" style="display:none;">
-    <p>Resizing is completed. Now you can download the image.</p>
-</div>
+            <!-- HTML -->
+            <div class="progress-wrapper" style="display:none;">
+                <div id="progressBar"></div>
+                <p id="progressText">Resizing... 0%</p>
+            </div>
+            <div class="message-wrapper" style="display:none;">
+                <p>Resizing is completed. Now you can download the image.</p>
+            </div>
 
 
-          
-            
+
+
 
             <div class="download-section">
                 <label for="formatSelect"><i class="fas fa-file-image"></i> Export Format:</label>
@@ -124,50 +127,35 @@
                     <option value="webp">WebP</option>
                 </select>
 
-                
+
                 <!-- Quality Options -->
                 <div class="quality-options">
-                 <label for="qualitySelect"><i class="fa fa-check-circle"></i> Select Quality:</label>
-                <select id="qualitySelect">
-                   <option value="default">Default Quality</option>
-                    <option value="enhance">Reduce Quality</option>
-                     <option value="reduce">Enhance Quality</option>
-                   </select>
-                  </div>
+                    <label for="qualitySelect"><i class="fa fa-check-circle"></i> Select Quality:</label>
+                    <select id="qualitySelect">
+                        <option value="default">Default Quality</option>
+                        <option value="enhance">Reduce Quality</option>
+                        <option value="reduce">Enhance Quality</option>
+                    </select>
+                </div>
 
 
                 <button id="downloadBtn" class="btn"><i class="fas fa-download"></i> Download Image</button>
                 <!-- HTML -->
-                 <div class="download-message" style="display:none;"><i class="fas fa-download"></i>
-                 <p>Your download will start in 5 seconds...</p>
-                 </div>
+                <div class="download-message" style="display:none;"><i class="fas fa-download"></i>
+                    <p>Your download will start in 5 seconds...</p>
+                </div>
 
             </div>
         </div>
-    </section>
-
-    <!-- About Us Section -->
-    <section id="about" class="info-section">
-        <h2><i class="fa fa-book"></i> About Us</h2>
-        <p>Image Resizer Pro is a fast and reliable tool for resizing and exporting images in various formats. Our mission is to provide an easy-to-use platform for quick image editing needs.</p>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="info-section">
-        <h2><i class="fa fa-question-circle"></i> Frequently Asked Questions</h2>
-        <ul>
-            <li><strong>How do I resize my image?</strong> Simply upload your image, enter the desired dimensions, and click 'Resize'.</li>
-            <li><strong>Can I maintain the aspect ratio?</strong> Yes, check the 'Lock Aspect Ratio' option to maintain proportions.</li>
-            <li><strong>What formats can I export in?</strong> You can export in JPEG, PNG, and WebP formats.</li>
-        </ul>
     </section>
 
     <!-- Footer Section -->
     <footer>
         <p>&copy; 2024 Image Resizer Pro. All Rights Reserved.</p>
     </footer>
-
+</div>
     <!-- External JavaScript -->
     <script src="script.js"></script>
 </body>
+
 </html>
